@@ -1,0 +1,52 @@
+{
+  "track": {
+    "id": "3x9Kz0YqFqJZp2N7wL8VQm",
+    "name": "Neon Echoes",
+    "duration_ms": 198432,
+    "explicit": false,
+    "popularity": 72,
+    "preview_url": "https://p.scdn.co/mp3-preview/neonechoes",
+    "track_number": 4,
+    "disc_number": 1,
+    "external_urls": {
+      "spotify": "https://open.spotify.com/track/3x9Kz0YqFqJZp2N7wL8VQm"
+    }
+  },
+  "artists": [
+    {
+      "id": "6Rt9JxkM9YpLQwV0A3FzK2",
+      "name": "Echo Polaris",
+      "type": "artist",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6Rt9JxkM9YpLQwV0A3FzK2"
+      }
+    }
+  ],
+  "album": {
+    "id": "1B7QpKX9M0YVZ2A8E4T6dR",
+    "name": "Midnight Signals",
+    "album_type": "album",
+    "release_date": "2024-06-14",
+    "total_tracks": 12,
+    "images": [
+      {
+        "height": 640,
+        "width": 640,
+        "url": "https://i.scdn.co/image/ab67616d0000b273midnightsignals640"
+      },
+      {
+        "height": 300,
+        "width": 300,
+        "url": "https://i.scdn.co/image/ab67616d00001e02midnightsignals300"
+      },
+      {
+        "height": 64,
+        "width": 64,
+        "url": "https://i.scdn.co/image/ab67616d00004851midnightsignals64"
+      }
+    ],
+    "external_urls": {
+      "spotify": "https://open.spotify.com/album/1B7QpKX9M0YVZ2A8E4T6dR"
+    }
+  }
+}
