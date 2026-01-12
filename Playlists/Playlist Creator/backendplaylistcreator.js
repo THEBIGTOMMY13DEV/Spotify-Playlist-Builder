@@ -25,24 +25,37 @@ xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
     const data = JSON.parse(xhr.responseText);
 
-    const trackList = document.getElementById("track-list");
+    const Playlist = document.getElementById("Song");
 
     const song = data.track.name;
     const artist = data.artists.map(a => a.name).join(", ");
     const album = data.album.name;
 
     const row = document.createElement("div");
-    row.className = "track-item";
+    row.className = 'Song-item';
 
     row.innerHTML = `
-      <div class="track-text">
+      <div class='Song-text'>
         ${song}, ${artist}, ${album}
       </div>
-      <button class="add-btn">+</button>
+      <button class="PlaylistaddButton">+</button>
     `;
 
-    trackList.appendChild(row);
+    Playlist.appendChild(row);
+    const PlaylistBTN=document.querySelector(".PlaylistaddButton");
+    PlaylistBTN.addEventListener("click", function() {
+      PlaylistBTN.innerHTML= `✔`
+      PlaylistBTN.style.backgroundColor="#1db954";
+      PlaylistBTN.style.color="#000";
+      PlaylistBTN.style.border="#000";
+    });
   }
 };
 
 xhr.send();
+    // row.innerHTML = `
+    //   <div class="Playlist-text">
+    //     ${song}, ${artist}, ${album}
+    //   </div>
+    //   <button class="add-btn">+</button>
+    // `;
