@@ -1,15 +1,23 @@
 body {
-  background: #6b6b6b;
+  background: url("/Images/Background.jpg") no-repeat center;
+    height: 100vh;
+        background-size: cover;
+    background-attachment: fixed;
   font-family: "Arial", sans-serif;
+}
+.Title{
+  color:white;
+  text-align: center;
+  font-size: 50px;
 }
 
 .Song {
-  max-width: 1100px;
+  max-width: 900px;
   margin: 40px auto;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  scale: .8;
+  scale: 1;
 }
 
 .Song-item {
@@ -19,7 +27,7 @@ body {
   padding: 18px 22px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .Song-text {
@@ -41,9 +49,19 @@ body {
   font-size: 30px;
   cursor: pointer;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 .PlaylistaddButton:hover {
   background: transparent;
   color: #fff; 
   border-color: #fff;
+}
+
+.PlaylistaddButton img {
+  width: 38px;   /* Spotify-like icon size */
+  height: 38px;
+  display: block; /* removes baseline offset */
 }

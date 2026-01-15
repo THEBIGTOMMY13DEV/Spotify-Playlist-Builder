@@ -1,0 +1,17 @@
+<svg
+    width="38"
+    height="38"
+    viewBox="0 0 39 39"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <circle cx="19.5" cy="19.5" r="18" fill="#1DB954" />
+    <path
+      d="M12.5 20.5l5 5 9-10"
+      fill="none"
+      stroke="#000"
+      stroke-width="3.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>

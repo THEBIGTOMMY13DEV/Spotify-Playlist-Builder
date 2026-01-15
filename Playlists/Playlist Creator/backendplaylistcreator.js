@@ -44,18 +44,13 @@ xhr.onreadystatechange = function () {
     Playlist.appendChild(row);
     const PlaylistBTN=document.querySelector(".PlaylistaddButton");
     PlaylistBTN.addEventListener("click", function() {
-      PlaylistBTN.innerHTML= `✔`
+      console.log("Song Has been Saved to Playlist");
       PlaylistBTN.style.backgroundColor="#1db954";
       PlaylistBTN.style.color="#000";
       PlaylistBTN.style.border="#000";
+      PlaylistBTN.innerHTML= `<img src="./checkmark.svg">`
     });
   }
 };
 
 xhr.send();
-    // row.innerHTML = `
-    //   <div class="Playlist-text">
-    //     ${song}, ${artist}, ${album}
-    //   </div>
-    //   <button class="add-btn">+</button>
-    // `;
