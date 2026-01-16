@@ -19,38 +19,30 @@
 // xhttp.send();
 
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "Spotify.json", true);
+xhr.open("GET", "Spotify2.json", true);
 
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
     const data = JSON.parse(xhr.responseText);
-
+    console.log(data);
+    data.forEach(function(songs) {
     const Playlist = document.getElementById("Song");
-
-    const song = data.track.name;
-    const artist = data.artists.map(a => a.name).join(", ");
-    const album = data.album.name;
-
     const row = document.createElement("div");
     row.className = 'Song-item';
-
-    row.innerHTML = `
-      <div class='Song-text'>
-        ${song}, ${artist}, ${album}
-      </div>
-      <button class="PlaylistaddButton">+</button>
-    `;
-
+    row.innerHTML = "<div class='Song-text'>" +songs.TrackName + ", "+songs.Artist+"</div>"+"<button class='PlaylistaddButton'>+</button>";
     Playlist.appendChild(row);
-    const PlaylistBTN=document.querySelector(".PlaylistaddButton");
-    PlaylistBTN.addEventListener("click", function() {
-      console.log("Song Has been Saved to Playlist");
+  });
+    document.querySelectorAll(".PlaylistaddButton").forEach(PlaylistBTN => {
+    PlaylistBTN.addEventListener("click", function () {
+    console.log("Song Has been Saved to Playlist");
       PlaylistBTN.style.backgroundColor="#1db954";
       PlaylistBTN.style.color="#000";
       PlaylistBTN.style.border="#000";
       PlaylistBTN.innerHTML= `<img src="./checkmark.svg">`
+      });
     });
   }
 };
 
 xhr.send();
+{/* <button class="PlaylistaddButton">+</button> */}
