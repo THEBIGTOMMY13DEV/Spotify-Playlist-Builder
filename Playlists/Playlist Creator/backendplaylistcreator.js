@@ -45,4 +45,3 @@ xhr.onreadystatechange = function () {
 };
 
 xhr.send();
-{/* <button class="PlaylistaddButton">+</button> */}
