@@ -19,7 +19,7 @@
 // xhttp.send();
 
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "Spotify2.json", true);
+xhr.open("GET", "Spotify.json", true);
 
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4 && xhr.status === 200) {
@@ -29,7 +29,7 @@ xhr.onreadystatechange = function () {
     const Playlist = document.getElementById("Song");
     const row = document.createElement("div");
     row.className = 'Song-item';
-    row.innerHTML = "<div class='Song-text'>" +songs.TrackName + ", "+songs.Artist+"</div>"+"<button class='PlaylistaddButton'>+</button>";
+    row.innerHTML = "<div class='Song-text'>" +songs.TrackName + ", "+songs.Artists+"</div>"+"<button class='PlaylistaddButton'>+</button>";
     Playlist.appendChild(row);
   });
     document.querySelectorAll(".PlaylistaddButton").forEach(PlaylistBTN => {
