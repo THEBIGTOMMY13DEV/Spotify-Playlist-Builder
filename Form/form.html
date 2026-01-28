@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"7>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs to Recommend for the Playlist Builder</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <main>
+        <form id="songinquiryform" method="POST" enctype="multipart/form-data">
+
+            <label id="SongLabel">Song Name & Artist *</label><br>
+            <div id="SongInfo">
+                <input type="text" id="SongName" placeholder="Positions" minlength="1"  required><br>
+                <input type="text" id="ArtistName" placeholder="Ariana Grande" minlength="1"  required><br>
+            </div><br>
+
+            <label for="CoverartInsertion" id="CoverArtTitleOption" style="color:#1db954;">Upload Cover Art or Paste Link!</label><br>
+             <div id="CoverArtOptionContainer"><br>
+            
+            <label for="UploadTitleOption" id="UploadTitleOption">Upload from Device!</label><br>
+            <input type="radio" value="Upload" id="Upload" name="CoverArtOptions" required><br>
+            <label for="LinkTitle" id="LinkTitleOption">Use an image URL!</label><br>
+            <input type="radio" value="Link" id="Link" name="CoverArtOptions" required><br>
+            </div><br> 
+            <input id="resetbtn" type="reset"><br>
+            <input id="submitbtn" type="submit">
+
+        </form>
+</body>
+
+</html>
