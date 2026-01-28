@@ -89,17 +89,6 @@ body {
     border-radius: 30px;
     padding-left: 1em;
 }
-#UploadTitleOption {
-    color: #212121;
-    font-size: medium;
-
-}
-
-#LinkTitleOption {
-    color: #212121;
-    font-size: medium;
-
-}
 
 #resetbtn {
     width: 15%;
