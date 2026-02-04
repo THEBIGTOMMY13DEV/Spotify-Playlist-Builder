@@ -1,17 +1,48 @@
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "Spotify.json", true);
+console.log("js started");
+var data;
+var grid = document.getElementById("Song");
 
-xhr.onreadystatechange = function () {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    const data = JSON.parse(xhr.responseText);
-    console.log(data);
-    data.forEach(function(songs) {
-    const Playlist = document.getElementById("Song");
-    const row = document.createElement("div");
-    row.className = 'Song-item';
-    row.innerHTML = "<div class='Song-text'>" +songs.Song + ", "+songs.Artists+"</div>"+"<button class='PlaylistaddButton'>+</button>";
-    Playlist.appendChild(row);
+// LOAD DATA (localStorage first, otherwise XHR)
+if (localStorage.getItem("SongsList")) {
+  data = JSON.parse(localStorage.getItem("SongsList"));
+  console.log("Loaded from localStorage");
+  if (grid) {
+    makeCards();
+  }
+} else {
+  var xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      data = JSON.parse(this.responseText);
+      localStorage.setItem("SongsList", JSON.stringify(data));
+
+      if (grid) {
+        makeCards();
+      }
+    }
+  };
+
+  xhttp.open("GET", "Spotify.json", true);
+  xhttp.send();
+}
+
+// RENDER CARDS
+function makeCards() {
+  grid.innerHTML = "";
+
+  data.forEach(function (songs) {
+    let card = document.createElement("div");
+    card.classList.add("Song-item");
+
+    let textData =
+      "<div class='Song-text'>" + songs.Song + ", "+songs.Artists+ ", "+ songs.Genre+"</div>"+
+      "<button class='PlaylistaddButton'>+</button>";
+
+    card.innerHTML = textData;
+    grid.appendChild(card);
   });
+}
     document.querySelectorAll(".PlaylistaddButton").forEach(PlaylistBTN => {
     PlaylistBTN.addEventListener("click", function () {
     console.log("Song Has been Saved to Playlist");
@@ -21,7 +52,3 @@ xhr.onreadystatechange = function () {
       PlaylistBTN.innerHTML= `<img src="./checkmark.svg">`
       });
     });
-  }
-};
-
-xhr.send();
