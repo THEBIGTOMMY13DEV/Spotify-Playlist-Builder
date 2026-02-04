@@ -17,6 +17,7 @@
                 <input type="text" id="SongName" placeholder="Positions" minlength="1" required><br>
                 <input type="text" id="ArtistName" placeholder="Ariana Grande" minlength="1" required><br>
             </div><br>
+            <label id="GenreLabel">Select A Genre *</label>
             <select id="Genre" required>
                 <option value="">Select a Genre:</option>
                 <optgroup label="Core Genres">
@@ -125,14 +126,18 @@
                 </optgroup>
             </select><br>
 
-            <!-- <label for="CoverartInsertion" id="CoverArtTitleOption"style="color:white; background-color: black;;">Upload Cover Art or Paste Link!</label><br>
+            <label for="CoverartInsertion" id="CoverArtTitleOption">Upload Cover Art or Paste Link!</label><br>
             <div id="CoverArtOptionContainer"><br>
-                <label for="UploadTitleOption" id="UploadTitleOption" style="color:white;">Upload from
-                    Device!</label><br>
-                <input type="radio" value="Upload" id="Upload" name="CoverArtOptions"><br>
+                <label for="UploadRadioLabel" id="UploadRadioLabel" style="color:white;">Upload from Device!</label><br>
+                <input type="radio" id="UploadRadioButton" name="CoverArtOptions"><br>
+                <div class="UploadCoverArtContainer">
+                    <input type="file" id="coverArt" name="coverArt" />
+                    <label for="coverArt" class="ChosenCoverArtLabel">Choose Cover Art</label>
+                    <span class="CoverArtFileName" id="CoverArtFileName">No file selected</span>
+                </div>
                 <label for="LinkTitle" id="LinkTitleOption" style="color:white;">Use an image URL!</label><br>
                 <input type="radio" value="Link" id="Link" name="CoverArtOptions"><br>
-            </div><br> -->
+            </div><br>
             <input id="resetbtn" type="reset"><br>
             <input id="submitbtn" type="submit">
 

@@ -12,6 +12,22 @@ var form = document.querySelector("form");
 var SongNameInput = document.querySelector("#SongName");
 var ArtistNameInput = document.querySelector("#ArtistName");
 var GenreDropdownInput = document.querySelector("#Genre");
+const fileInput = document.getElementById("coverArt");
+const fileName = document.getElementById("CoverArtFileName");
+var RadioButton = document.getElementById("UploadRadioButton");
+  RadioButton.addEventListener("click", function () {
+    document.querySelector(".UploadCoverArtContainer").style.display="flex";
+    document.getElementById("UploadRadioLabel").style.display="none";
+    RadioButton.style.display="none";
+    document.getElementById("coverArt").style.display="none";
+    console.log("Clicked Radio Button");
+ });
+
+  fileInput.addEventListener("change", () => {
+    fileName.textContent = fileInput.files.length
+      ? fileInput.files[0].name
+      : "No file selected";
+  });
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
