@@ -58,3 +58,52 @@ function makeCards() {
     });
   });
 }
+
+// identify sorting buttons (make sure the #IDs below match your buttons in html)
+var sortAZBtn = document.querySelector("#sort-az");
+var sortZABtn = document.querySelector("#sort-za");
+
+
+// sort click handlers for buttons, add two buttons to your html and give them the same IDs as below
+sortAZBtn.addEventListener("click", function () {
+  sortByTitle("az");
+  console.log("Sort works 1 !");
+});
+  sortZABtn.addEventListener("click", function () {
+  sortByTitle("za");
+});
+
+
+// sort function
+function sortByTitle(direction) {
+  // data should be the variable that stores the list of data, make sure the name matches what you have
+  data.sort(function (a, b) {
+    var titleA = String(a.Song).toLowerCase();
+    var titleB = String(b.Song).toLowerCase();
+
+
+    if (titleA < titleB) {
+      if (direction == "az") {
+        return -1;
+      } else {
+        return 1;
+      }
+    }
+
+
+    if (titleA > titleB) {
+      if (direction == "az") {
+        return 1;
+      } else {
+        return -1;
+      }
+    }
+
+
+    return 0;
+  });
+
+
+  makeCards();
+}
+
