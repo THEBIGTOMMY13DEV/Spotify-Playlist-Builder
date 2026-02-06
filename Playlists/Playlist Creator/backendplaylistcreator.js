@@ -53,7 +53,7 @@ function makeCards() {
       PlaylistBTN.style.backgroundColor = "#1db954";
       PlaylistBTN.style.color = "#000";
       PlaylistBTN.style.borderColor = "#000";
-      PlaylistBTN.innerHTML = `<img src="./checkmark.svg">`;
+      PlaylistBTN.innerHTML = `<img src="/Images/checkmark.svg">`;
       PlaylistBTN.disabled = true;
     });
   });
