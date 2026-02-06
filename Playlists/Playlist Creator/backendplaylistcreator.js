@@ -36,19 +36,25 @@ function makeCards() {
     card.classList.add("Song-item");
 
     let textData =
-      "<div class='Song-text'>" + songs.Song + ", "+songs.Artists+ ", "+ songs.Genre+"</div>"+
+      "<div class='Song-text'>" +
+      songs.Song + ", " + songs.Artists + ", " + songs.Genre +
+      "</div>" +
       "<button class='PlaylistaddButton'>+</button>";
 
     card.innerHTML = textData;
     grid.appendChild(card);
+
+    // 🔧 ATTACH CLICK AFTER INSERTION
+    let PlaylistBTN = card.querySelector(".PlaylistaddButton");
+
+    PlaylistBTN.addEventListener("click", function () {
+      console.log("Song Has been Saved to Playlist");
+
+      PlaylistBTN.style.backgroundColor = "#1db954";
+      PlaylistBTN.style.color = "#000";
+      PlaylistBTN.style.borderColor = "#000";
+      PlaylistBTN.innerHTML = `<img src="./checkmark.svg">`;
+      PlaylistBTN.disabled = true;
+    });
   });
 }
-    document.querySelectorAll(".PlaylistaddButton").forEach(PlaylistBTN => {
-    PlaylistBTN.addEventListener("click", function () {
-    console.log("Song Has been Saved to Playlist");
-      PlaylistBTN.style.backgroundColor="#1db954";
-      PlaylistBTN.style.color="#000";
-      PlaylistBTN.style.border="#000";
-      PlaylistBTN.innerHTML= `<img src="./checkmark.svg">`
-      });
-    });
